@@ -1,8 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { IBM_Plex_Sans } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = IBM_Plex_Sans({ subsets: ['latin'] ,
+weight: ['400', '500' , '700'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`flex items-center justify-center h-screen  bg-[url('/bg.svg')] bg-cover bg-no-repeat ${font.className} `}>{children}</body>
     </html>
   )
 }
